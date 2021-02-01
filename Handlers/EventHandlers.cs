@@ -24,48 +24,48 @@ namespace SupplyDrops.Handlers
         public EventHandlers()
         {
             //You can also use SynapseController.Server to get the Server!
-            Server.Get.Events.Round.RoundStartEvent += onStart;
-            Server.Get.Events.Round.RoundEndEvent += onRoundEnd;
-            Server.Get.Events.Round.RoundRestartEvent += onRoundRestart;
+            Server.Get.Events.Round.RoundStartEvent += OnStart;
+            Server.Get.Events.Round.RoundEndEvent += OnRoundEnd;
+            Server.Get.Events.Round.RoundRestartEvent += OnRoundRestart;
         }
 
 
-        public void onStart()
+        public void OnStart()
         {
-            _start = Timing.RunCoroutine(doSupplyDrop());
+            _start = Timing.RunCoroutine(DoSupplyDrop());
         }
 
-        public void onRoundEnd() => Timing.KillCoroutines(_start);
+        public void OnRoundEnd() => Timing.KillCoroutines(_start);
 
-        public void onRoundRestart() => Timing.KillCoroutines(_start);
+        public void OnRoundRestart() => Timing.KillCoroutines(_start);
 
 
-        public IEnumerator<float> doSupplyDrop()
+        public IEnumerator<float> DoSupplyDrop()
         {
             while (true)
             {
-                yield return Timing.WaitForSeconds(Plugin.Config.supplyIntervall);
+                yield return Timing.WaitForSeconds(Plugin.Config.SupplyIntervall);
 
-                if (Server.Get.Players.Count >= Plugin.Config.minPlayersForSupply)
+                if (Server.Get.Players.Count >= Plugin.Config.MinPlayersForSupply)
                 {
-                    if (Plugin.Config.doCassieAnnouncement)
-                        Map.Get.GlitchedCassie(Plugin.Config.cassieAnnouncement);
+                    if (Plugin.Config.DoCassieAnnouncement)
+                        Map.Get.GlitchedCassie(Plugin.Config.CassieAnnouncement);
 
-                    if (!Plugin.Config.isOnlyHelicopter)
+                    if (!Plugin.Config.IsOnlyHelicopter)
                     {
                         int i = r.Next(1, 101);
-                        if (i <= Plugin.Config.ciCarChance)
+                        if (i <= Plugin.Config.CiCarChance)
                         {
 
                             RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.ChaosInsurgency);
 
-                            if (Plugin.Config.doBroadcast)
-                                Map.Get.SendBroadcast(Plugin.Config.broadcastDuration, Plugin.Config.broadcastMessageCI);
+                            if (Plugin.Config.DoBroadcast)
+                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageCI);
 
                             yield return Timing.WaitForSeconds(15f);
 
 
-                            foreach (var items in Plugin.Config.items)
+                            foreach (var items in Plugin.Config.Items)
                                 items.Parse().Drop(ciSpawn);
 
                         }
@@ -73,12 +73,12 @@ namespace SupplyDrops.Handlers
                         {
                             RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
 
-                            if (Plugin.Config.doBroadcast)
-                                Map.Get.SendBroadcast(Plugin.Config.broadcastDuration, Plugin.Config.broadcastMessageMTF);
+                            if (Plugin.Config.DoBroadcast)
+                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
 
                             yield return Timing.WaitForSeconds(15f);
 
-                            foreach (var items in Plugin.Config.items)
+                            foreach (var items in Plugin.Config.Items)
                                 items.Parse().Drop(mtfSpawn);
 
                         }
@@ -87,12 +87,12 @@ namespace SupplyDrops.Handlers
                     {
                         RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
 
-                        if (Plugin.Config.doBroadcast)
-                            Map.Get.SendBroadcast(Plugin.Config.broadcastDuration, Plugin.Config.broadcastMessageMTF);
+                        if (Plugin.Config.DoBroadcast)
+                            Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
 
                         yield return Timing.WaitForSeconds(15f);
 
-                        foreach (var items in Plugin.Config.items)
+                        foreach (var items in Plugin.Config.Items)
                             items.Parse().Drop(mtfSpawn);
                     }
 
