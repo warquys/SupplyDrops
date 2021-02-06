@@ -16,6 +16,7 @@ Help from the skies!
 ## Config
 Name  | Type | Default | Description
 ------------ | ------------ | ------------- | ------------ 
+`IsEnabled` | Boolean | true | Is this plugin enabled?
 `MinPlayersForSupply` | Int | 4 | Minimum players for supply drops to happen
 `IsOnlyHelicopter` | Boolean | true | Do you want that supplies only spawn via NTF Helicopter or do you want that the CI Car also can bring supplies?
 `CiCarChance` | Int | 50 | The percentage that the CI Car brings in the supplies instead of the NTF Helicopter (requieres isOnlyHelicopter to be set to false)
