@@ -12,13 +12,13 @@ namespace SupplyDrops
 {
     [PluginInformation(
         Author = "TheVoidNebula",
-        Description = "Brings Supplies via MTF helicopter and CI truck.",
+        Description = "Help from the skies!",
         LoadPriority = 0,
         Name = "SupplyDrops",
         SynapseMajor = 2,
-        SynapseMinor = 4,
-        SynapsePatch = 2,
-        Version = "b1.0"
+        SynapseMinor = 5,
+        SynapsePatch = 0,
+        Version = "1.1"
         )]
     public class Plugin : AbstractPlugin
     {
