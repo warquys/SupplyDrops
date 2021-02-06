@@ -1,4 +1,7 @@
 # SupplyDrops
+Help from the skies!
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
 ## Features
 * Determine if the NTF Helicopter and CI Car bring in supply
