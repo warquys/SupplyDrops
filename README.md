@@ -13,6 +13,8 @@ Help from the skies!
 2. Place the SupplyDrops.dll file that you can download [here](https://github.com/TheVoidNebula/SupplyDrops/releases) in your plugin directory
 3. Restart/Start your server.
 
+## Showcase
+
 ## Config
 Name  | Type | Default | Description
 ------------ | ------------ | ------------- | ------------ 
@@ -28,3 +30,46 @@ Name  | Type | Default | Description
 `BroadcastMessageCI` | String | A Supply drop has arrived via CI Car | What should the Broadcast be when the CI Car brings in supplies?
 `BroadcastMessageMTF` | String | A Supply drop has arrived via NTF Helicopter | What should the Broadcast be when the NTF Helicopter brings in supplies?
 `CassieAnnouncement` | String | Supply has enter the facility | What should the C.A.S.S.I.E announcement be?
+
+## Config.yml
+```yml
+[SupplyDrops]
+{
+isEnabled: true
+minPlayersForSupply: 4
+isOnlyHelicopter: true
+ciCarChance: 50
+items:
+- iD: 14
+  durabillity: 0
+  sight: 0
+  barrel: 0
+  other: 0
+  xSize: 1
+  ySize: 1
+  zSize: 1
+- iD: 14
+  durabillity: 0
+  sight: 0
+  barrel: 0
+  other: 0
+  xSize: 1
+  ySize: 1
+  zSize: 1
+- iD: 12
+  durabillity: 0
+  sight: 0
+  barrel: 0
+  other: 0
+  xSize: 1
+  ySize: 1
+  zSize: 1
+supplyIntervall: 300
+doBroadcast: true
+broadcastDuration: 15
+doCassieAnnouncement: true
+broadcastMessageCI: <b>A Supply drop has arrived via <color=#2EB800>CI Car</color></b>
+broadcastMessageMTF: <b>A Supply drop has arrived via <color=#1F22C7>NTF Helicopter</color>!</b>
+cassieAnnouncement: Supply has entered the facility
+}
+```
