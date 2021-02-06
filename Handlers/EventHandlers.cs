@@ -32,7 +32,10 @@ namespace SupplyDrops.Handlers
 
         public void OnStart()
         {
-            _start = Timing.RunCoroutine(DoSupplyDrop());
+            if (Plugin.Config.IsEnabled)
+            {
+                _start = Timing.RunCoroutine(DoSupplyDrop());
+            }
         }
 
         public void OnRoundEnd() => Timing.KillCoroutines(_start);
@@ -42,32 +45,48 @@ namespace SupplyDrops.Handlers
 
         public IEnumerator<float> DoSupplyDrop()
         {
-            while (true)
+            if (Plugin.Config.IsEnabled)
             {
-                yield return Timing.WaitForSeconds(Plugin.Config.SupplyIntervall);
-
-                if (Server.Get.Players.Count >= Plugin.Config.MinPlayersForSupply)
+                while (true)
                 {
-                    if (Plugin.Config.DoCassieAnnouncement)
-                        Map.Get.GlitchedCassie(Plugin.Config.CassieAnnouncement);
+                    yield return Timing.WaitForSeconds(Plugin.Config.SupplyIntervall);
 
-                    if (!Plugin.Config.IsOnlyHelicopter)
+                    if (Server.Get.Players.Count >= Plugin.Config.MinPlayersForSupply)
                     {
-                        int i = r.Next(1, 101);
-                        if (i <= Plugin.Config.CiCarChance)
+                        if (Plugin.Config.DoCassieAnnouncement)
+                            Map.Get.GlitchedCassie(Plugin.Config.CassieAnnouncement);
+
+                        if (!Plugin.Config.IsOnlyHelicopter)
                         {
+                            int i = r.Next(1, 101);
+                            if (i <= Plugin.Config.CiCarChance)
+                            {
 
-                            RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.ChaosInsurgency);
+                                RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.ChaosInsurgency);
 
-                            if (Plugin.Config.DoBroadcast)
-                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageCI);
+                                if (Plugin.Config.DoBroadcast)
+                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageCI);
 
-                            yield return Timing.WaitForSeconds(15f);
+                                yield return Timing.WaitForSeconds(15f);
 
 
-                            foreach (var items in Plugin.Config.Items)
-                                items.Parse().Drop(ciSpawn);
+                                foreach (var items in Plugin.Config.Items)
+                                    items.Parse().Drop(ciSpawn);
 
+                            }
+                            else
+                            {
+                                RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
+
+                                if (Plugin.Config.DoBroadcast)
+                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
+
+                                yield return Timing.WaitForSeconds(15f);
+
+                                foreach (var items in Plugin.Config.Items)
+                                    items.Parse().Drop(mtfSpawn);
+
+                            }
                         }
                         else
                         {
@@ -80,33 +99,16 @@ namespace SupplyDrops.Handlers
 
                             foreach (var items in Plugin.Config.Items)
                                 items.Parse().Drop(mtfSpawn);
-
                         }
+
+                        yield return Timing.WaitForOneFrame;
                     }
                     else
-                    {
-                        RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
-
-                        if (Plugin.Config.DoBroadcast)
-                            Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
-
-                        yield return Timing.WaitForSeconds(15f);
-
-                        foreach (var items in Plugin.Config.Items)
-                            items.Parse().Drop(mtfSpawn);
-                    }
-
-                    yield return Timing.WaitForOneFrame;
+                        Server.Get.Logger.Info("Not enough players for a supplydrop, skipping");
                 }
-                else
-                    Server.Get.Logger.Info("Not enough players for a supplydrop, skipping");
             }
+
         }
-
-
-
-
-
 
     }
 }

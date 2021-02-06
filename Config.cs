@@ -6,6 +6,8 @@ namespace SupplyDrops
 {
     public class Config : AbstractConfigSection
     {
+        public bool IsEnabled = true;
+
         public int MinPlayersForSupply = 4;
 
         public bool IsOnlyHelicopter = true;
@@ -31,7 +33,7 @@ namespace SupplyDrops
 
         public string BroadcastMessageMTF = "<b>A Supply drop has arrived via <color=#1F22C7>NTF Helicopter</color>!</b>";
 
-        public string CassieAnnouncement = "Supply has enter the facility";
+        public string CassieAnnouncement = "Supply has entered the facility";
     }
 
 }
