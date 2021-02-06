@@ -14,9 +14,9 @@ Help from the skies!
 3. Restart/Start your server.
 
 ## Showcase
-[Chaos Insurgency Car](/assets/ci.png)
-[NTF Chopper](/assets/ntfchopper.png)
-[Supply](/assets/supply.png)
+![Chaos Insurgency Car](/assets/ci.png)
+![NTF Chopper](/assets/ntfchopper.png)
+![Supply](/assets/supply.png)
 
 ## Config
 Name  | Type | Default | Description
