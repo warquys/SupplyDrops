@@ -1,7 +1,7 @@
 # SupplyDrops
 Help from the skies!
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
 ## Features
 * Determine if the NTF Helicopter and CI Car bring in supply
@@ -14,6 +14,9 @@ Help from the skies!
 3. Restart/Start your server.
 
 ## Showcase
+![Chaos Insurgency Car](/assets/ci.png)
+![NTF Chopper](/assets/ntfchopper.png)
+![Supply](/assets/supply.png)
 
 ## Config
 Name  | Type | Default | Description
