@@ -16,9 +16,9 @@ namespace SupplyDrops
         LoadPriority = 0,
         Name = "SupplyDrops",
         SynapseMajor = 2,
-        SynapseMinor = 5,
+        SynapseMinor = 6,
         SynapsePatch = 0,
-        Version = "1.1"
+        Version = "1.2"
         )]
     public class Plugin : AbstractPlugin
     {
