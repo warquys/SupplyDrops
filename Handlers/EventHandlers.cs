@@ -65,7 +65,7 @@ namespace SupplyDrops.Handlers
                                 RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.ChaosInsurgency);
 
                                 if (Plugin.Config.DoBroadcast)
-                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageCI);
+                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.CISpawnBroadcast);
 
                                 yield return Timing.WaitForSeconds(15f);
 
@@ -79,7 +79,7 @@ namespace SupplyDrops.Handlers
                                 RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
 
                                 if (Plugin.Config.DoBroadcast)
-                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
+                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast);
 
                                 yield return Timing.WaitForSeconds(15f);
 
@@ -93,7 +93,7 @@ namespace SupplyDrops.Handlers
                             RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
 
                             if (Plugin.Config.DoBroadcast)
-                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.Config.BroadcastMessageMTF);
+                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast);
 
                             yield return Timing.WaitForSeconds(15f);
 
