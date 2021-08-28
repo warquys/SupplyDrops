@@ -119,10 +119,8 @@ Name  | Type | Default | Description
 `MinPlayersForSupply` | Int | 4 | Minimum players for supply drops to happen
 `IsOnlyHelicopter` | Boolean | true | Do you want that supplies only spawn via NTF Helicopter or do you want that the CI Car also can bring supplies?
 `CiCarChance` | Int | 50 | The percentage that the CI Car brings in the supplies instead of the NTF Helicopter (requieres isOnlyHelicopter to be set to false)
-`Items` | List | 14, 0, 0, 0, 1, 1, 1 #  1, 1, 1 | iD is basicly the item id (look up in the Synapse resources to find item ids; you can also use custom ids for custom items) durability if you use weapons you can set the ammo (if not just let it stay at 0) sight, barrel, other are only useful for weapons (you can set the attachments for weapons; if not just the value 0), X, Y, Z values are for the size of the weapon
 `SupplyIntervall` | Float | 300 | The intervall in which the supply drops happen (in seconds)
 `DoBroadcast` | Boolean | 300 | Should the players be notified via a Broadcast that a Supplydrop is happening?
-`BroadcastDuration` | uInt | 15 | How long should the broadcast be?
 `DoCassieAnnouncement` | Boolean | true | Should C.A.S.S.I.E announce the supply drop?
 `CassieAnnouncement` | String | Supply has enter the facility | What should the C.A.S.S.I.E announcement be?
 
