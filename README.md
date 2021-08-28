@@ -7,9 +7,9 @@ Help from the skies!
 _**Supplydrops**_ allows for a planned equipment drop from the **NTF Chopper / CI Car**. With that you can give humans a chance in the late game, when all of the items on the map are already being used.
 
 ## Features
-* Determine if the NTF Helicopter and CI Car bring in supply
-* Determine how often supplies happen
-* Determine what the supply is (you can even use custom Weapons like with the MoreTools Plugin)
+* NTF Chopper? CI Car, which of them will bring the loot?
+* Plan the Intervall on when Supplydrops happen
+* Decide what loot they contain
 
 ## Supported Languages 
 * English
