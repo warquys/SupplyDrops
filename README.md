@@ -9,7 +9,9 @@ _**Supplydrops**_ allows for a planned equipment drop from the **NTF Chopper / C
 ## Features
 * NTF Chopper? CI Car, which of them will bring the loot?
 * Plan the Intervall on when Supplydrops happen
-* Decide what loot they contain
+* Create your own Supply Types! (Like Medical Items, Ammo, Weapons!)
+* Decide how high the chance for each item is
+* Custom Item Support!
 
 ## Supported Languages 
 * English
