@@ -126,7 +126,7 @@ Name  | Type | Default | Description
 `DoCassieAnnouncement` | Boolean | true | Should C.A.S.S.I.E announce the supply drop?
 `CassieAnnouncement` | String | Supply has enter the facility | What should the C.A.S.S.I.E announcement be?
 
-## Config.yml
+## Config.syml
 ```yml
 [SupplyDrops]
 {
@@ -162,9 +162,7 @@ items:
 supplyIntervall: 300
 doBroadcast: true
 broadcastDuration: 15
-doCassieAnnouncement: true
-broadcastMessageCI: <b>A Supply drop has arrived via <color=#2EB800>CI Car</color></b>
-broadcastMessageMTF: <b>A Supply drop has arrived via <color=#1F22C7>NTF Helicopter</color>!</b>
+doCassieAnnouncement: tru
 cassieAnnouncement: Supply has entered the facility
 }
 ```
