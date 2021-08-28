@@ -18,6 +18,90 @@ Help from the skies!
 ![NTF Chopper](/assets/ntfchopper.png)
 ![Supply](/assets/supply.png)
 
+## Item IDs
+
+<details>
+<summary>Ammunition</summary>
+
+| Name | ID |
+| --- | --- |
+| Ammo12gauge | 12 |
+| Ammo44cal | 27 |
+| Ammo556x45 | 22 |
+| Ammo762x39 | 28 |
+| Ammo9x19 | 29 |
+ 
+</details>
+
+<details>
+<summary>Weapons</summary>
+
+| Name | ID |
+| --- | --- |
+| GunCOM18 | 13 |
+| GunE11SR | 20 |
+| GunCrossvec | 21 |
+| GunFSP9 | 23 |
+| GunLogicer |24 |
+| GunRevolver | 39 |
+| GunShotgun | 41 |
+| GunAK | 40 |
+| --- | |  
+| MicroHID | 13 |
+| GrenadeFlash | 26 |
+| GrenadeHE | 25 |
+
+</details>
+
+<details>
+<summary>Keycards</summary>
+
+| Name | ID |
+| --- | --- |
+| KeycardO5 | 11 |
+| KeycardFacilityManager | 9 |
+| KeycardZoneManager | 3 |
+| KeycardResearchCoordinator | 2 |
+| KeycardContainmentEngineer | 6 |
+| KeycardScientist | 1 |
+| KeycardJanitor | 0 |
+| KeycardNTFCommander | 8 |
+| KeycardNTFLieutenant | 7 |
+| KeycardNTFOfficer | 5 |
+| KeycardGuard | 4 |
+| KeycardChaosInsurgency | 10 |
+ 
+</details>
+
+<details>
+<summary>Armors</summary>
+
+| Name | ID |
+| --- | --- |
+| ArmorLight | 36 |
+| ArmorCombat | 37 |
+| ArmorHeavy | 38 |
+ 
+</details>
+
+<details>
+<summary>Items</summary>
+
+| Name | ID |
+| --- | --- |
+| Radio | 12 |
+| --- | | 
+| Medkit | 14 |
+| Adrenaline | 33 |
+| Painkillers | 34 |
+| --- | | 
+| SCP018 | 31 |
+| SCP207 | 18 |
+| SCP268 | 32 |
+| SCP500 | 17 |
+
+</details>
+
 ## Config
 Name  | Type | Default | Description
 ------------ | ------------ | ------------- | ------------ 
