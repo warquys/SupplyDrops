@@ -27,8 +27,7 @@ You have to either dm me on Discord, then I can explain it to you or you just cr
 3. Restart/Start your server.
 
 ## Showcase
-![Chaos Insurgency Car](/assets/ci.png)
-![NTF Chopper](/assets/ntfchopper.png)
+![A Supply Drop](/assets/SupplyDrop.png)
 ![Supply](/assets/supply.png)
 
 ## Item IDs
