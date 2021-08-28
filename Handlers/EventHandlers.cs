@@ -18,8 +18,6 @@ namespace SupplyDrops.Handlers
     class EventHandlers
     {
         Random r = new Random();
-        Vector3 mtfSpawn = new Vector3(180, 993, -58);
-        Vector3 ciSpawn = new Vector3(5, 988, -58);
         private CoroutineHandle _start;
         public EventHandlers()
         {
@@ -47,6 +45,8 @@ namespace SupplyDrops.Handlers
         {
             if (Plugin.Config.IsEnabled)
             {
+                Vector3 MtfSpawn = new Vector3(Plugin.Config.MTFSpawnLocation.x, Plugin.Config.MTFSpawnLocation.y, Plugin.Config.MTFSpawnLocation.z);
+                Vector3 CiSpawn = new Vector3(Plugin.Config.CISpawnLocation.x, Plugin.Config.CISpawnLocation.y, Plugin.Config.CISpawnLocation.z);
                 while (true)
                 {
                     yield return Timing.WaitForSeconds(Plugin.Config.SupplyIntervall);
@@ -63,48 +63,83 @@ namespace SupplyDrops.Handlers
                             {
 
                                 RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.ChaosInsurgency);
+                                SupplyType supplyType = Plugin.Config.SupplyDrops[UnityEngine.Random.Range(0, Plugin.Config.SupplyDrops.Count())];
 
                                 if (Plugin.Config.DoBroadcast)
-                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.CISpawnBroadcast);
+                                    Map.Get.SendBroadcast(15, Plugin.PluginTranslation.ActiveTranslation.CISpawnBroadcast.Replace("%type%", supplyType.SupplyTypeName));
 
                                 yield return Timing.WaitForSeconds(15f);
 
-
-                                foreach (var items in Plugin.Config.Items)
-                                    items.Parse().Drop(ciSpawn);
-
+                                foreach(var items in supplyType.SupplyItems)
+                                {
+                                    int chance = UnityEngine.Random.Range(0, 100);
+                                    if (chance <= items.Chance)
+                                    {
+                                        if(items.Amount > 1)
+                                        {
+                                            for (int y = 0; y < items.Amount; y++)
+                                                items.Item.Parse().Drop(CiSpawn);
+                                        }
+                                        else
+                                            items.Item.Parse().Drop(CiSpawn);
+                                    }
+                                }
                             }
                             else
                             {
                                 RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
+                                SupplyType supplyType = Plugin.Config.SupplyDrops[UnityEngine.Random.Range(0, Plugin.Config.SupplyDrops.Count())];
 
                                 if (Plugin.Config.DoBroadcast)
-                                    Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast);
+                                    Map.Get.SendBroadcast(15, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast.Replace("%type%", supplyType.SupplyTypeName));
 
                                 yield return Timing.WaitForSeconds(15f);
 
-                                foreach (var items in Plugin.Config.Items)
-                                    items.Parse().Drop(mtfSpawn);
+                                foreach (var items in supplyType.SupplyItems)
+                                {
+                                    int chance = UnityEngine.Random.Range(0, 100);
+                                    if (chance <= items.Chance)
+                                    {
+                                        if (items.Amount > 1)
+                                        {
+                                            for (int y = 0; y < items.Amount; y++)
+                                                items.Item.Parse().Drop(MtfSpawn);
+                                        }
+                                        else
+                                            items.Item.Parse().Drop(MtfSpawn);
+                                    }
+                                }
 
                             }
                         }
                         else
                         {
                             RespawnEffectsController.ExecuteAllEffects(RespawnEffectsController.EffectType.Selection, SpawnableTeamType.NineTailedFox);
+                            SupplyType supplyType = Plugin.Config.SupplyDrops[UnityEngine.Random.Range(0, Plugin.Config.SupplyDrops.Count())];
 
                             if (Plugin.Config.DoBroadcast)
-                                Map.Get.SendBroadcast(Plugin.Config.BroadcastDuration, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast);
+                                Map.Get.SendBroadcast(15, Plugin.PluginTranslation.ActiveTranslation.MTFSpawnBroadcast.Replace("%type%", supplyType.SupplyTypeName));
 
                             yield return Timing.WaitForSeconds(15f);
 
-                            foreach (var items in Plugin.Config.Items)
-                                items.Parse().Drop(mtfSpawn);
+                            foreach (var items in supplyType.SupplyItems)
+                            {
+                                int chance = UnityEngine.Random.Range(0, 100);
+                                if (chance <= items.Chance)
+                                {
+                                    if (items.Amount > 1)
+                                    {
+                                        for (int y = 0; y < items.Amount; y++)
+                                            items.Item.Parse().Drop(MtfSpawn);
+                                    }
+                                    else
+                                        items.Item.Parse().Drop(MtfSpawn);
+                                }
+                            }
                         }
-
-                        yield return Timing.WaitForOneFrame;
                     }
                     else
-                        Server.Get.Logger.Info("Not enough players for a supplydrop, skipping");
+                        Server.Get.Logger.Info("[SupplyDrops] Not enough players for a supplydrop, skipping");
                 }
             }
 

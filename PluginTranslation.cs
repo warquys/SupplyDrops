@@ -9,8 +9,8 @@ namespace SupplyDrops
 {
     public class PluginTranslation : IPluginTranslation
     {
-        public string MTFSpawnBroadcast = "<b>A <color=blue>MTF</color> Supply drop has arrived!</b>";
+        public string MTFSpawnBroadcast = "<b><i>A <color=blue>MTF</color> Supply drop has arrived!</i></b>\n<b><i>Supply Type: %type%</i></b>";
 
-        public string CISpawnBroadcast = "<b>A <color=green>Chaos Insurgency</color> Supply drop has arrived!</b>";
+        public string CISpawnBroadcast = "<b><u>A <color=green>Chaos Insurgency</color> Supply drop has arrived!</i></b>\n<b><i>Supply Type: %type%</i></b>";
     }
 }

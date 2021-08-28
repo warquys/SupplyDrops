@@ -19,7 +19,7 @@ namespace SupplyDrops
         SynapseMajor = 2,
         SynapseMinor = 7,
         SynapsePatch = 0,
-        Version = "2.0.1"
+        Version = "2.1.0"
         )]
     public class Plugin : AbstractPlugin
     {
@@ -35,9 +35,15 @@ namespace SupplyDrops
 
             PluginTranslation.AddTranslation(new PluginTranslation
             {
-                CISpawnBroadcast = "<b><color=green>Chaos Insurgency</color> Vorratslieferung ist eingetroffen!</b>",
-                MTFSpawnBroadcast = "<b><color=blue>MTF</color> Vorratslieferung ist eingetroffen!</b>"
+                CISpawnBroadcast = "<b><i><color=green>Chaos Insurgency</color> Vorratslieferung ist eingetroffen!</i></b>\n<b><i>Vorratsart: %type%</i></b>",
+                MTFSpawnBroadcast = "<b><color=blue>MTF</color> Vorratslieferung ist eingetroffen!</b>\n<b><i>Vorratsart: %type%</i></b>"
             }, "GERMAN");
+
+            PluginTranslation.AddTranslation(new PluginTranslation
+            {
+                CISpawnBroadcast = "<b><u>Un largage aérien de l'<color=green>Insurrection du Chaos</color> est arrivé!</i></b>\n<b><i>Type de ravitaillement: %type%</i></b>",
+                MTFSpawnBroadcast = "<b><i>Un largage aérien <color=blue>MTF</color> est arrivé!</i></b>\n<b><i>Type de ravitaillement: %type%</i></b>"
+            }, "FRENCH");
 
             new EventHandlers();
         }
