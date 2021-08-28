@@ -184,13 +184,13 @@ supplyDrops:
 # Should this Plugin be enabled?
 isEnabled: true
 # How many Players need to be on the server to start the supply timer cloak?
-minPlayersForSupply: 1
+minPlayersForSupply: 4
 # Should Supplydrops only arrive via the MTF Chopper?
 isOnlyHelicopter: true
 # If you have IsOnlyHelicopter on false, how high is the chance Supplydrops arrive via the CI car?
 ciCarChance: 50
 # What should the intervall be in what Supplydrops arrive (in seconds)
-supplyIntervall: 30
+supplyIntervall: 300
 # Should there be a Broadcast when supply arrives?
 doBroadcast: true
 # Should there be a C.A.S.S.I.E Announcement when supply arrives?
