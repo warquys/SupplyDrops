@@ -3,10 +3,22 @@ Help from the skies!
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
+## What is this plugin?
+_**Supplydrops**_ allows for a planned equipment drop from the **NTF Chopper / CI Car**. With that you can give humans a chance in the late game, when all of the items on the map are already being used.
+
 ## Features
-* Determine if the NTF Helicopter and CI Car bring in supply
-* Determine how often supplies happen
-* Determine what the supply is (you can even use custom Weapons like with the MoreTools Plugin)
+* NTF Chopper? CI Car, which of them will bring the loot?
+* Plan the Intervall on when Supplydrops happen
+* Create your own Supply Types! (Like Medical Items, Ammo, Weapons!)
+* Decide how high the chance for each item is
+* Custom Item Support!
+
+## Supported Languages 
+* English
+* German
+
+## How to add new Languages
+You have to either dm me on Discord, then I can explain it to you or you just create a pull request. (My Discord Account: `TheVoidNebula#5090`)
 
 ## Installation
 1. [Install Synapse](https://github.com/SynapseSL/Synapse/wiki#hosting-guides)
@@ -18,6 +30,90 @@ Help from the skies!
 ![NTF Chopper](/assets/ntfchopper.png)
 ![Supply](/assets/supply.png)
 
+## Item IDs
+
+<details>
+<summary>Ammunition</summary>
+
+| Name | ID |
+| --- | --- |
+| Ammo12gauge | 12 |
+| Ammo44cal | 27 |
+| Ammo556x45 | 22 |
+| Ammo762x39 | 28 |
+| Ammo9x19 | 29 |
+ 
+</details>
+
+<details>
+<summary>Weapons</summary>
+
+| Name | ID |
+| --- | --- |
+| GunCOM18 | 13 |
+| GunE11SR | 20 |
+| GunCrossvec | 21 |
+| GunFSP9 | 23 |
+| GunLogicer |24 |
+| GunRevolver | 39 |
+| GunShotgun | 41 |
+| GunAK | 40 |
+| --- | |  
+| MicroHID | 13 |
+| GrenadeFlash | 26 |
+| GrenadeHE | 25 |
+
+</details>
+
+<details>
+<summary>Keycards</summary>
+
+| Name | ID |
+| --- | --- |
+| KeycardO5 | 11 |
+| KeycardFacilityManager | 9 |
+| KeycardZoneManager | 3 |
+| KeycardResearchCoordinator | 2 |
+| KeycardContainmentEngineer | 6 |
+| KeycardScientist | 1 |
+| KeycardJanitor | 0 |
+| KeycardNTFCommander | 8 |
+| KeycardNTFLieutenant | 7 |
+| KeycardNTFOfficer | 5 |
+| KeycardGuard | 4 |
+| KeycardChaosInsurgency | 10 |
+ 
+</details>
+
+<details>
+<summary>Armors</summary>
+
+| Name | ID |
+| --- | --- |
+| ArmorLight | 36 |
+| ArmorCombat | 37 |
+| ArmorHeavy | 38 |
+ 
+</details>
+
+<details>
+<summary>Items</summary>
+
+| Name | ID |
+| --- | --- |
+| Radio | 12 |
+| --- | | 
+| Medkit | 14 |
+| Adrenaline | 33 |
+| Painkillers | 34 |
+| --- | | 
+| SCP018 | 31 |
+| SCP207 | 18 |
+| SCP268 | 32 |
+| SCP500 | 17 |
+
+</details>
+
 ## Config
 Name  | Type | Default | Description
 ------------ | ------------ | ------------- | ------------ 
@@ -25,54 +121,81 @@ Name  | Type | Default | Description
 `MinPlayersForSupply` | Int | 4 | Minimum players for supply drops to happen
 `IsOnlyHelicopter` | Boolean | true | Do you want that supplies only spawn via NTF Helicopter or do you want that the CI Car also can bring supplies?
 `CiCarChance` | Int | 50 | The percentage that the CI Car brings in the supplies instead of the NTF Helicopter (requieres isOnlyHelicopter to be set to false)
-`Items` | List | 14, 0, 0, 0, 1, 1, 1 #  1, 1, 1 | iD is basicly the item id (look up in the Synapse resources to find item ids; you can also use custom ids for custom items) durability if you use weapons you can set the ammo (if not just let it stay at 0) sight, barrel, other are only useful for weapons (you can set the attachments for weapons; if not just the value 0), X, Y, Z values are for the size of the weapon
 `SupplyIntervall` | Float | 300 | The intervall in which the supply drops happen (in seconds)
 `DoBroadcast` | Boolean | 300 | Should the players be notified via a Broadcast that a Supplydrop is happening?
-`BroadcastDuration` | uInt | 15 | How long should the broadcast be?
 `DoCassieAnnouncement` | Boolean | true | Should C.A.S.S.I.E announce the supply drop?
-`BroadcastMessageCI` | String | A Supply drop has arrived via CI Car | What should the Broadcast be when the CI Car brings in supplies?
-`BroadcastMessageMTF` | String | A Supply drop has arrived via NTF Helicopter | What should the Broadcast be when the NTF Helicopter brings in supplies?
 `CassieAnnouncement` | String | Supply has enter the facility | What should the C.A.S.S.I.E announcement be?
 
-## Config.yml
+## Config.syml
 ```yml
 [SupplyDrops]
 {
+# Decide what loot will spawn via the Supplydrops?
+supplyDrops:
+- supplyTypeName: <color=#00FF12>Medicial Items</color>
+  supplyItems:
+  - chance: 100
+    amount: 4
+    item:
+      iD: 14
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 75
+    amount: 4
+    item:
+      iD: 33
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 50
+    amount: 2
+    item:
+      iD: 17
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+- supplyTypeName: <color=#140BFF>Weapons</color>
+  supplyItems:
+  - chance: 100
+    amount: 1
+    item:
+      iD: 39
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 100
+    amount: 2
+    item:
+      iD: 41
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+# Should this Plugin be enabled?
 isEnabled: true
+# How many Players need to be on the server to start the supply timer cloak?
 minPlayersForSupply: 4
+# Should Supplydrops only arrive via the MTF Chopper?
 isOnlyHelicopter: true
+# If you have IsOnlyHelicopter on false, how high is the chance Supplydrops arrive via the CI car?
 ciCarChance: 50
-items:
-- iD: 14
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
-- iD: 14
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
-- iD: 12
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
+# What should the intervall be in what Supplydrops arrive (in seconds)
 supplyIntervall: 300
+# Should there be a Broadcast when supply arrives?
 doBroadcast: true
-broadcastDuration: 15
+# Should there be a C.A.S.S.I.E Announcement when supply arrives?
 doCassieAnnouncement: true
-broadcastMessageCI: <b>A Supply drop has arrived via <color=#2EB800>CI Car</color></b>
-broadcastMessageMTF: <b>A Supply drop has arrived via <color=#1F22C7>NTF Helicopter</color>!</b>
+# What should the C.A.S.S.I.E Announcement be?
 cassieAnnouncement: Supply has entered the facility
 }
 ```
