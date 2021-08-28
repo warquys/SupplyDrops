@@ -16,6 +16,7 @@ _**Supplydrops**_ allows for a planned equipment drop from the **NTF Chopper / C
 ## Supported Languages 
 * English
 * German
+* French (By nath256#8390``)
 
 ## How to add new Languages
 You have to either dm me on Discord, then I can explain it to you or you just create a pull request. (My Discord Account: `TheVoidNebula#5090`)
@@ -191,6 +192,16 @@ isOnlyHelicopter: true
 ciCarChance: 50
 # What should the intervall be in what Supplydrops arrive (in seconds)
 supplyIntervall: 300
+# Where should Items from the MTF Chopper spawn?
+mTFSpawnLocation:
+  x: 180
+  y: 993
+  z: -58
+# Where should Items from the CI Car spawn?
+cISpawnLocation:
+  x: 5
+  y: 998
+  z: -58
 # Should there be a Broadcast when supply arrives?
 doBroadcast: true
 # Should there be a C.A.S.S.I.E Announcement when supply arrives?
