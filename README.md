@@ -3,10 +3,20 @@ Help from the skies!
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
+## What is this plugin?
+_**Supplydrops**_ allows for a planned equipment drop from the **NTF Chopper / CI Car**. With that you can give humans a chance in the late game, when all of the items on the map are already being used.
+
 ## Features
 * Determine if the NTF Helicopter and CI Car bring in supply
 * Determine how often supplies happen
 * Determine what the supply is (you can even use custom Weapons like with the MoreTools Plugin)
+
+## Supported Languages 
+* English
+* German
+
+## How to add new Languages
+You have to either dm me on Discord, then I can explain it to you or you just create a pull request. (My Discord Account: `TheVoidNebula#5090`)
 
 ## Installation
 1. [Install Synapse](https://github.com/SynapseSL/Synapse/wiki#hosting-guides)
@@ -114,8 +124,6 @@ Name  | Type | Default | Description
 `DoBroadcast` | Boolean | 300 | Should the players be notified via a Broadcast that a Supplydrop is happening?
 `BroadcastDuration` | uInt | 15 | How long should the broadcast be?
 `DoCassieAnnouncement` | Boolean | true | Should C.A.S.S.I.E announce the supply drop?
-`BroadcastMessageCI` | String | A Supply drop has arrived via CI Car | What should the Broadcast be when the CI Car brings in supplies?
-`BroadcastMessageMTF` | String | A Supply drop has arrived via NTF Helicopter | What should the Broadcast be when the NTF Helicopter brings in supplies?
 `CassieAnnouncement` | String | Supply has enter the facility | What should the C.A.S.S.I.E announcement be?
 
 ## Config.yml
