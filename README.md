@@ -130,39 +130,72 @@ Name  | Type | Default | Description
 ```yml
 [SupplyDrops]
 {
+# Decide what loot will spawn via the Supplydrops?
+supplyDrops:
+- supplyTypeName: <color=#00FF12>Medicial Items</color>
+  supplyItems:
+  - chance: 100
+    amount: 4
+    item:
+      iD: 14
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 75
+    amount: 4
+    item:
+      iD: 33
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 50
+    amount: 2
+    item:
+      iD: 17
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+- supplyTypeName: <color=#140BFF>Weapons</color>
+  supplyItems:
+  - chance: 100
+    amount: 1
+    item:
+      iD: 39
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+  - chance: 100
+    amount: 2
+    item:
+      iD: 41
+      durabillity: 0
+      weaponAttachments: 0
+      xSize: 1
+      ySize: 1
+      zSize: 1
+# Should this Plugin be enabled?
 isEnabled: true
-minPlayersForSupply: 4
+# How many Players need to be on the server to start the supply timer cloak?
+minPlayersForSupply: 1
+# Should Supplydrops only arrive via the MTF Chopper?
 isOnlyHelicopter: true
+# If you have IsOnlyHelicopter on false, how high is the chance Supplydrops arrive via the CI car?
 ciCarChance: 50
-items:
-- iD: 14
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
-- iD: 14
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
-- iD: 12
-  durabillity: 0
-  sight: 0
-  barrel: 0
-  other: 0
-  xSize: 1
-  ySize: 1
-  zSize: 1
-supplyIntervall: 300
+# What should the intervall be in what Supplydrops arrive (in seconds)
+supplyIntervall: 30
+# Should there be a Broadcast when supply arrives?
 doBroadcast: true
-broadcastDuration: 15
-doCassieAnnouncement: tru
+# Should there be a C.A.S.S.I.E Announcement when supply arrives?
+doCassieAnnouncement: true
+# What should the C.A.S.S.I.E Announcement be?
 cassieAnnouncement: Supply has entered the facility
 }
 ```
