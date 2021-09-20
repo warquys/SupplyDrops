@@ -102,6 +102,7 @@ You have to either dm me on Discord, then I can explain it to you or you just cr
 | Name | ID |
 | --- | --- |
 | Radio | 12 |
+| Coin | 35 |
 | --- | | 
 | Medkit | 14 |
 | Adrenaline | 33 |
