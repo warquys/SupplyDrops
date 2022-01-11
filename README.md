@@ -37,7 +37,7 @@ You have to either dm me on Discord, then I can explain it to you or you just cr
 
 | Name | ID |
 | --- | --- |
-| Ammo12gauge | 12 |
+| Ammo12gauge | 19 |
 | Ammo44cal | 27 |
 | Ammo556x45 | 22 |
 | Ammo762x39 | 28 |
