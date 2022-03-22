@@ -1,0 +1,16 @@
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\SupplyDrops.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\SupplyDrops.pdb
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\Assembly-CSharp-firstpass.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\Assembly-CSharp.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\Mirror.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\Synapse.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\UnityEngine.CoreModule.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\UnityEngine.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\UnityEngine.PhysicsModule.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\System.Memory.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\bin\Debug\System.Buffers.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\obj\Debug\SupplyDrops.csproj.AssemblyReference.cache
+H:\Dev\SCP SL\Synapse\SupplyDrops\obj\Debug\SupplyDrops.csproj.CoreCompileInputs.cache
+H:\Dev\SCP SL\Synapse\SupplyDrops\obj\Debug\SupplyDrops.csproj.CopyComplete
+H:\Dev\SCP SL\Synapse\SupplyDrops\obj\Debug\SupplyDrops.dll
+H:\Dev\SCP SL\Synapse\SupplyDrops\obj\Debug\SupplyDrops.pdb
