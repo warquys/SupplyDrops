@@ -27,7 +27,7 @@ You have to either dm me on Discord, then I can explain it to you or you just cr
 3. Restart/Start your server.
 
 ## Showcase
-![A Supply Drop](https://github.com/VT-DevGiT/VT-MapEditor/blob/main/asset/MapExemple.png)
+![A Supply Drop](/assets/SupplyDrop.png)
 ![Supply](/assets/supply.png)
 
 ## Item IDs
