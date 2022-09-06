@@ -1,6 +1,8 @@
 # SupplyDrops
 Help from the skies!
 
+[Original Plugin](https://github.com/TheVoidNebula/SupplyDrops)
+
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
 ## What is this plugin?
